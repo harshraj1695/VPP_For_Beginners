@@ -141,6 +141,12 @@ set interface feature tap0 pktparse-node arc device-input
 show interface features tap0
 ```
 
+**enable/disable** vpp node in packet parser plugin
+```bash
+pktparse tap0
+pktparse tap0 disable
+```
+
 Linux side:
 ```bash
 sudo ip addr add 10.10.1.2/24 dev vpp-tap0
