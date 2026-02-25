@@ -139,7 +139,7 @@ Linux side:
 ```bash
 sudo ip addr add 10.10.1.2/24 dev vpp-tap0
 sudo ip link set vpp-tap0 up
-ping 10.10.1.1
+ping 10.10trace add virtio-input 20.1.1
 ```
 
 Back in VPP:
@@ -149,5 +149,11 @@ show pktcounter
 
 ---
 
+
+For tracing the packets Node wise
+```bash
+trace add virtio-input 20
+show trace
+```
 # Result
 Your plugin now counts real dataplane packets inside VPP.
