@@ -135,11 +135,18 @@ set interface ip address tap0 10.10.1.1/24
 set interface feature tap0 pktcounter-node arc ip4-unicast
 ```
 
+for device case
+```bash
+set interface feature tap0 pktparse-node arc device-input
+show interface features tap0
+```
+
 Linux side:
 ```bash
 sudo ip addr add 10.10.1.2/24 dev vpp-tap0
 sudo ip link set vpp-tap0 up
-ping 10.10trace add virtio-input 20.1.1
+ping 10.10.1.1
+trace add virtio-input
 ```
 
 Back in VPP:
