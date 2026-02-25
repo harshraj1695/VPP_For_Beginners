@@ -152,6 +152,7 @@ show pktcounter
 
 For tracing the packets Node wise
 ```bash
+clear trace
 trace add virtio-input 20
 show trace
 ```
