@@ -2,6 +2,8 @@
 #include <vnet/vnet.h>
 #include <vnet/ip/ip.h>
 #include <vlib/unix/plugin.h>
+#include <vnet/feature/feature.h>
+
 
 /* -------- TRACE STRUCT -------- */
 
@@ -104,7 +106,6 @@ VLIB_REGISTER_NODE (traceplug_node) = {
 
 /* -------- FEATURE ARC INSERTION -------- */
 
-#include <vnet/feature/feature.h>
 
 VNET_FEATURE_INIT (traceplug_feature, static) = {
   .arc_name = "ip4-unicast",
