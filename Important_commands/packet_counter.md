@@ -134,13 +134,21 @@ set interface state tap0 up
 set interface ip address tap0 10.10.1.1/24
 set interface feature tap0 pktcounter-node arc ip4-unicast
 ```
+**OR**
+```bash
+set interface feature host-veth1 pktcounter-node arc ip4-unicast
+```
 
 for device case
 ```bash
 set interface feature tap0 pktparse-node arc device-input
 show interface features tap0
 ```
-
+**Deleting the interface**
+```bash
+sudo ip link set vpp-tap0 down\n
+sudo ip link delete vpp-tap0\n
+```
 **enable/disable** vpp node in packet parser plugin
 ```bash
 pktparse tap0
