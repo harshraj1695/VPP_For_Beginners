@@ -139,7 +139,13 @@ set interface feature tap0 pktcounter-node arc ip4-unicast
 set interface feature host-veth1 pktcounter-node arc ip4-unicast
 ```
 
-for device case
+# for deleting the interface
+```bash
+sudo ip link set vpp-tap0 down
+sudo ip link delete vpp-tap0
+```
+
+# for device case
 ```bash
 set interface feature tap0 pktparse-node arc device-input
 show interface features tap0
