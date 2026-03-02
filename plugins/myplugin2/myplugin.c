@@ -5,17 +5,17 @@
 
 static void print1_fn(vlib_main_t *vm)
 {
-    vlib_cli_output(vm, "Print1 function executed");
+    vlib_cli_output(vm, "Print1 function executed normally");
 }
 
 static void print2_fn(vlib_main_t *vm)
 {
-    vlib_cli_output(vm, "Print2 function executed");
+    vlib_cli_output(vm, "Print2 function executed normally");
 }
 
 static void print3_fn(vlib_main_t *vm)
 {
-    vlib_cli_output(vm, "Print3 function executed");
+    vlib_cli_output(vm, "Print3 function executed normally");
 }
 
 // cli command function
