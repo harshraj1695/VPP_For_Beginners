@@ -166,7 +166,11 @@ Linux side:
 sudo ip addr add 10.10.1.2/24 dev vpp-tap0
 sudo ip link set vpp-tap0 up
 ping 10.10.1.1
-trace add virtio-input
+```
+# For trace adding
+```bash
+trace add af-packet-input 10
+show trace
 ```
 
 Back in VPP:
