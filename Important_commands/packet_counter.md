@@ -138,7 +138,10 @@ set interface feature tap0 myarp-node arc ip4-unicast
 ```bash
 set interface feature host-veth1 pktcounter-node arc ip4-unicast
 ```
-
+# disable any node 
+```bash
+set interface feature tap0 arp-reply arc arp disable 
+```
 # for deleting the interface
 ```bash
 sudo ip link set vpp-tap0 down
