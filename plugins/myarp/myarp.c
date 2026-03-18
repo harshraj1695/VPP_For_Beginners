@@ -5,21 +5,18 @@
 #include <vlib/unix/plugin.h>
 
 /*
- * REAL values taken from your setup:
+ * REAL values taken from my setup:
  *   VPP tap0 MAC  : 02:fe:3c:6d:95:1f   (from: ip link show vpp-tap0)
  *   VPP IP        : 10.10.1.1
  *   Linux vpp-tap0: 10.10.1.2/24
  *
- * my_ip is stored in NETWORK byte order so it matches
  * arp->ip4_over_ethernet[x].ip4.as_u32 directly off the wire.
  */
 
 static u8  my_mac[6] = {0x02, 0xfe, 0x3c, 0x6d, 0x95, 0x1f};
 static u32 my_ip;   /* set in network byte order by myarp_init() */
 
-/* ----------------------------------------------------------------
- * Per-packet trace record
- * ---------------------------------------------------------------- */
+ // Per-packet trace record
 typedef struct {
   u32 sw_if_index;
   u32 next_index;
@@ -51,18 +48,14 @@ format_myarp_trace (u8 *s, va_list *args)
   return s;
 }
 
-/* ----------------------------------------------------------------
- * Next-node indices
- * ---------------------------------------------------------------- */
+ // Next-node indices
 typedef enum {
   MYARP_NEXT_DROP = 0,
   MYARP_NEXT_IFACE_OUTPUT = 1,
   MYARP_N_NEXT,
 } myarp_next_t;
 
-/* ----------------------------------------------------------------
- * Node function
- * ---------------------------------------------------------------- */
+ // Node function
 static uword
 myarp_node_fn (vlib_main_t        *vm,
                vlib_node_runtime_t *node,
