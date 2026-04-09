@@ -22,7 +22,7 @@ hi_one_command_fn (vlib_main_t * vm,
 }
 
 /* Register CLI command */
-VLIB_CLI_COMMAND (hi_one_command, static) = {
+VLIB_git CLI_COMMAND (hi_one_command, static) = {
     .path = "hi one",
     .short_help = "hi one <number>",
     .function = hi_one_command_fn,
