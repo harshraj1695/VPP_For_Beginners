@@ -79,6 +79,10 @@ cd ~/vpp
 make wipe
 make build-release
 ```
+# If build is not detected you can do (but first check with cmakelist)
+```bash
+rm -rf build-root/build-vpp-native/vpp && make build-release
+```
 
 ------------------------------------------------------------------------
 
